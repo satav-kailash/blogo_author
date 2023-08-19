@@ -1,0 +1,5 @@
+<%= form_with model: [@author, @account] do |f| %>
+  <%= f.label :bank_name %>
+  <%= f.text_field :bank_name %>
+  <%= f.submit %>
+<% end %>

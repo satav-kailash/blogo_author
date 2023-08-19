@@ -1,0 +1,33 @@
+<%= form_with model: @profile do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <br>
+  <%= f.label :married, "Married Status:" %>
+  <%= f.label :married, "Yes" %>
+  <%= f.radio_button :married, true %>
+  <%= f.label :married, "No" %>
+  <%= f.radio_button :married, false %>
+  <br>
+  <%= f.label :gender, "Gender:" %>
+  <%= f.label :gender, "Male" %>
+  <%= f.radio_button :gender, "Male" %>
+  <%= f.label :gender, "Femail" %>
+  <%= f.radio_button :gender, "Femail" %>
+  <%= f.label :gender, "Other" %>
+  <%= f.radio_button :gender, "Other" %>
+  <br>
+  <%= f.label :city %>
+  <%= f.select :city, ["Indore", "Puna", "Bhopal"], :prompt => '-select-' %>
+  <br>
+  <%= f.label :dob, "Date of Birth:" %>
+  <%= f.date_select :dob, :start_year => Date.current.year, :end_year => 1923, prompt:{day: 'Select Day', month: 'Select Month', year: 'Select year'} %>
+  <br>
+
+  <%= f.label :skills, "skills:" %>
+  <% Profile::SKILLS.each do |s| %> 
+  <%= f.label :skills, s %>
+  <%= f.check_box :skills,{multiple: true}, s, false %>
+  <% end %>
+  <br>
+  <%= f.submit %>
+<% end %>

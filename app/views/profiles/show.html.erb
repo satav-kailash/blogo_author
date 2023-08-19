@@ -1,0 +1,6 @@
+Name is <%= @profile.name %><br>
+Married Status is <%= married_status(@profile) %><br>
+Skills: <%= @profile.skills.join(',') %><br>
+city: <%= @profile.city %><br>
+Date of Birth: <%= @profile.dob.to_fs(:long) %><br>
+Gender: <%= @profile.gender %>
